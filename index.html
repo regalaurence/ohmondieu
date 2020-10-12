@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/Users/laurence.rega/Documents/Laurence/ironhack/project1-game/styles.css" />
+    <title>Oh mon dieu!</title>
+  </head>
+  <body>
+    <main class="instructions">
+        <div class="game-intro">
+        <img src="./images/templogo.jpeg" alt="" class="logo-img" />
+        <br />
+        <div cvlass="start-buttons">
+        <button id="start-numbers">Les nombres</button>
+        <button id="start-fruits">Les fruits</button>
+        <button id="start-vegetables">Les légumes</button>
+        <button id="start-colors">Les couleurs</button>
+        </div>
+        <p id="howtoplay">Proof the French language police you know how speak 
+            French before they kick you out of the country. 
+            Check the word in the word-box and hit the corresponding image without getting caught by the French language police.</p>
+        <img src="./images/arrows.png" alt="" class="arrows-img" />
+        </div>
+
+        <div id="game-board">
+        <div id="game-info">
+          <div id="word-box">
+            <h3>Catch the corresponding image</h3>
+            <p id="word-to-catch">Pick a topic to find out.</p>
+          </div>
+          <div>
+            <h3>Remaining lives</h3>
+            <p id="lives">5</p>
+          </div>
+          <div>
+          <h3>Score</h3>
+            <p id="score">0</p>
+          </div>
+        </div>
+        <canvas id="canvas" width="900" height="450"></canvas>
+        </div>
+    </main>
+    <script type="text/javascript" src="/Users/laurence.rega/Documents/Laurence/ironhack/project1-game/canvas.js"></script>
+  </body>
+</html>
