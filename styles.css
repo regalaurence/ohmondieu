@@ -24,8 +24,9 @@ body {
     padding: 20px 10px;
 }
 
-#start-button {
-    padding : 30px;
+.start-button {
+    display: flex;
+    flex-wrap: wrap;
 } 
 
 .arrows-img {
