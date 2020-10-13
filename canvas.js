@@ -540,8 +540,11 @@ window.onload = () => {
     return listOfWords[Math.floor(Math.random() * listOfWords.length)]
   }
 
+  let gameOver = false
+
   function startGame(vocabulary) {
     let draw = () => {
+      if (gameOver) return
       ctx.clearRect(0, 0, 900, 450)
       for (let i = 0; i < vocabulary.length; i++) {
         ctx.drawImage(vocabulary[i].img, vocabulary[i].x, vocabulary[i].y, vocabulary[i].width, vocabulary[i].height)
@@ -576,7 +579,6 @@ window.onload = () => {
             word
           );
           window.speechSynthesis.speak(msg);
-
         }
         else if (intersect(playerObj, vocabulary[i]) === true
           && document.querySelector('#word-to-catch').innerText !== vocabulary[i].number) {
@@ -593,13 +595,9 @@ window.onload = () => {
         policeObj.speedX = 0
         ctx.clearRect(0, 0, 900, 450)
         document.getElementById('winsound').play()
-        setTimeout(() => {
-          document.getElementById('winsound').pause()
-        }, 1000);
+        ctx.font = '40px Courier New'
         if (playerObj.score > 7) {
           ctx.strokeText(`Félicitations! You won with ${playerObj.score} points.`, 150, 200, 650)
-          ctx.font = '40px Courier New'
-          //setTimeout(() => {
           ctx.fillText("Let's try again with another topic.", 145, 250, 650)
         }
         else {
@@ -609,20 +607,18 @@ window.onload = () => {
           else {
             ctx.strokeText(`Félicitations! You won with ${playerObj.score} points.`, 150, 200, 650)
           }
-          ctx.font = '40px Courier New'
           ctx.fillText("Not a great score though. Let's practice more.", 145, 250, 650)
         }
+        gameOver = true
 
-        // }, 1000);
         setTimeout(() => {
           location.reload()
-        }, 2000);
+        }, 3000);
       }
 
       let doIntersectPolice = intersect(playerObj, policeObj)
 
       if (doIntersectPolice === true) {
-
         alert('You got caught. Be careful. Say "Je suis désolé" and keep on playing.')
         playerObj.x = 0
         playerObj.y = 0
