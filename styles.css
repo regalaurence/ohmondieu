@@ -24,10 +24,14 @@ body {
     padding: 20px 10px;
 }
 
-.start-button {
+.start-buttons {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap;    
 } 
+
+button {
+    margin : 3px
+}
 
 .arrows-img {
     width : 200px;
