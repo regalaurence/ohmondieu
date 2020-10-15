@@ -500,6 +500,7 @@ window.onload = () => {
         let msg = new SpeechSynthesisUtterance(
           word
         );
+        msg.lang = "fr-FR"
         window.speechSynthesis.speak(msg);
       }
       else if (!gameStarted && event.currentTarget.innerText === "Les fruits") {
@@ -510,6 +511,7 @@ window.onload = () => {
         let msg = new SpeechSynthesisUtterance(
           word
         );
+        msg.lang = "fr-FR"
         window.speechSynthesis.speak(msg);
       }
       else if (!gameStarted && event.currentTarget.innerText === "Les animaux") {
@@ -520,6 +522,7 @@ window.onload = () => {
         let msg = new SpeechSynthesisUtterance(
           word
         );
+        msg.lang = "fr-FR"
         window.speechSynthesis.speak(msg);
       }
       else if (!gameStarted && event.currentTarget.innerText === "Les couleurs") {
@@ -530,6 +533,7 @@ window.onload = () => {
         let msg = new SpeechSynthesisUtterance(
           word
         );
+        msg.lang = "fr-FR"
         window.speechSynthesis.speak(msg);
       }
     };
@@ -578,6 +582,7 @@ window.onload = () => {
           let msg = new SpeechSynthesisUtterance(
             word
           );
+          msg.lang = "fr-FR"
           window.speechSynthesis.speak(msg);
         }
         else if (intersect(playerObj, vocabulary[i]) === true
@@ -625,6 +630,7 @@ window.onload = () => {
         playerObj.lives -= 1
         console.log(playerObj.lives)
         if (playerObj.lives === 0) {
+          document.getElementById('policesound').play()
           alert('Game over. Adieu la France !')
           ctx.clearRect(0, 0, 900, 450)
           location.reload()
